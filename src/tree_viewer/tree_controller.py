@@ -13,5 +13,5 @@ class TreeController:
 
     def set_tree_node(self, csv_path: Path) -> None:
         builder = TreeNodeBuilder(csv_path)
-        self._tree_node = builder.root
+        self._tree_node = builder.root.children[0]
         self._view.tree.set_tree(self._tree_node)

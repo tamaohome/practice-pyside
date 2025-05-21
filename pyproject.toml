@@ -21,6 +21,7 @@ managed = true
 dev-dependencies = [
     "pytest>=8.3.5",
     "pytest-qt>=4.4.0",
+    "commitizen>=4.8.0",
 ]
 
 [tool.hatch.metadata]
@@ -28,3 +29,11 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "pep440"
+version_provider = "pep621"
+update_changelog_on_bump = true
+major_version_zero = true

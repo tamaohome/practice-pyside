@@ -12,15 +12,30 @@
 -e file:.
 anytree==2.13.0
     # via practice-pyside
+argcomplete==3.6.2
+    # via commitizen
+charset-normalizer==3.4.2
+    # via commitizen
 colorama==0.4.6
+    # via commitizen
     # via pytest
+commitizen==4.8.0
+decli==0.6.2
+    # via commitizen
 iniconfig==2.1.0
     # via pytest
+jinja2==3.1.6
+    # via commitizen
+markupsafe==3.0.2
+    # via jinja2
 packaging==25.0
+    # via commitizen
     # via pytest
 pluggy==1.6.0
     # via pytest
     # via pytest-qt
+prompt-toolkit==3.0.51
+    # via questionary
 pyside6==6.9.0
     # via practice-pyside
 pyside6-addons==6.9.0
@@ -31,7 +46,17 @@ pyside6-essentials==6.9.0
 pytest==8.3.5
     # via pytest-qt
 pytest-qt==4.4.0
+pyyaml==6.0.2
+    # via commitizen
+questionary==2.1.0
+    # via commitizen
 shiboken6==6.9.0
     # via pyside6
     # via pyside6-addons
     # via pyside6-essentials
+termcolor==2.5.0
+    # via commitizen
+tomlkit==0.13.2
+    # via commitizen
+wcwidth==0.2.13
+    # via prompt-toolkit

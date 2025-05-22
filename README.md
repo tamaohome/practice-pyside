@@ -2,17 +2,52 @@
 
 ## セットアップ
 
-プロジェクトの依存パッケージをインストール
+事前に `rye` の導入が必要 ([rye 公式サイト](https://rye.astral.sh))。
+
+プロジェクトルートで以下のコマンドを実行し、プロジェクトの依存パッケージをインストールする。
 
 ```sh
 rye sync
 ```
 
-サンプルコードを実行
+## 実行方法
+
+### カウンター (MVC モデルのサンプル)
+
+![](images/counter.png)
 
 ```sh
-python -m src.counter      # カウンターのサンプル
-python -m src.tree_viewer  # ツリー表示のサンプル
+python -m src.counter
+```
+
+### ツリー表示
+
+`QTreeWidget`, `QTreeWidgetItem`
+
+![](images/tree_viewer.png)
+
+```sh
+python -m src.tree_viewer
+```
+
+### 各種レイアウト
+
+`QVBoxLayout`, `QHBoxLayout`, `QGridLayout`, `QFormLayout`
+
+![](images/layouts.png)
+
+```sh
+python -m src.layouts
+```
+
+### 各種ウィジェット
+
+`QLabel`, `QPushButton`, `QLineEdit`, `QTextEdit`, `QCheckBox`, `QRadioButton`, `QComboBox`, `QSpinBox`, `QSlider`, `QProgressBar`
+
+![](images/widgets.png)
+
+```sh
+python -m src.widgets
 ```
 
 ## PySide6 の基本構文

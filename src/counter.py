@@ -31,7 +31,10 @@ class CounterView(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Counter")
-        self.resize(160, 100)
+        self.setFixedSize(160, 140)
+
+        # 閉じるボタンのみ表示
+        self.setWindowFlags(Qt.WindowType.Window | Qt.WindowType.WindowCloseButtonHint)
 
         self.counter = CounterLineEdit()
 

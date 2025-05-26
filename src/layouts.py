@@ -10,6 +10,7 @@ from PySide6.QtWidgets import (
     QPushButton,
     QLineEdit,
     QGroupBox,
+    QSizePolicy,
 )
 import sys
 
@@ -34,9 +35,9 @@ class LayoutsExample(QWidget):
         """縦並びレイアウト"""
         group = QGroupBox("QVBoxLayout")
         layout = QVBoxLayout()
-        layout.addWidget(QPushButton("Top"))
-        layout.addWidget(QPushButton("Middle"))
-        layout.addWidget(QPushButton("Bottom"))
+        layout.addWidget(MyButton("Top"))
+        layout.addWidget(MyButton("Middle"))
+        layout.addWidget(MyButton("Bottom"))
         group.setLayout(layout)
         return group
 
@@ -44,9 +45,9 @@ class LayoutsExample(QWidget):
         """横並びレイアウト"""
         group = QGroupBox("QHBoxLayout")
         layout = QHBoxLayout()
-        layout.addWidget(QPushButton("Left"))
-        layout.addWidget(QPushButton("Center"))
-        layout.addWidget(QPushButton("Right"))
+        layout.addWidget(MyButton("Left"))
+        layout.addWidget(MyButton("Center"))
+        layout.addWidget(MyButton("Right"))
         group.setLayout(layout)
         return group
 
@@ -54,11 +55,20 @@ class LayoutsExample(QWidget):
         """グリッドレイアウト"""
         group = QGroupBox("QGridLayout")
         layout = QGridLayout()
-        for i in range(3):
-            for j in range(3):
-                num = i * 3 + j + 1
-                layout.addWidget(QPushButton(f"No.{num}"), i, j)
+        for row in range(3):
+            for col in range(5):
+                label = f"Cell {row + 1}-{col + 1}"
+                layout.addWidget(MyButton(label), row, col)
         group.setLayout(layout)
+
+        # セルのマージ
+        # INFO: 以下の処理では指定のセルに上書きする形でセル結合を行っている。
+        #       ただし、既存のアイテムは削除されずにフォーカス可能な状態として残る。
+        #       そのため、実際のコードでは、結合されるセルを空にする必要がある。
+        layout.addWidget(MyButton("Merged Cell"), 0, 0, 2, 2)
+        layout.addWidget(MyButton("Horizontally Merged Cell"), 2, 0, 1, 3)
+        layout.addWidget(MyButton("Vertically\nMerged\nCell"), 1, 4, 2, 1)
+
         return group
 
     def _create_form_group(self) -> QGroupBox:
@@ -79,6 +89,13 @@ class LayoutsExample(QWidget):
         layout.addRow("", btn_layout)
         group.setLayout(layout)
         return group
+
+
+class MyButton(QPushButton):
+    def __init__(self, text: str, parent=None):
+        super().__init__(text, parent)
+        self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.setMinimumSize(50, 30)
 
 
 if __name__ == "__main__":

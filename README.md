@@ -10,45 +10,47 @@
 rye sync
 ```
 
-## 実行方法
+## サンプルコード
 
 ### カウンター (MVC モデルのサンプル)
-
-![](images/counter.png)
 
 ```sh
 python -m src.counter
 ```
 
+https://github.com/tamaohome/practice-pyside/blob/main/src/counter.py
+
+![](images/counter.png)
+
 ### ツリー表示
-
-`QTreeWidget`, `QTreeWidgetItem`
-
-![](images/tree_viewer.png)
 
 ```sh
 python -m src.tree_viewer
 ```
 
+https://github.com/tamaohome/practice-pyside/tree/main/src/tree_viewer
+
+![](images/tree_viewer.png)
+
 ### 各種レイアウト
-
-`QVBoxLayout`, `QHBoxLayout`, `QGridLayout`, `QFormLayout`
-
-![](images/layouts.png)
 
 ```sh
 python -m src.layouts
 ```
 
+https://github.com/tamaohome/practice-pyside/blob/main/src/layouts.py
+
+![](images/layouts.png)
+
 ### 各種ウィジェット
-
-`QLabel`, `QPushButton`, `QLineEdit`, `QTextEdit`, `QCheckBox`, `QRadioButton`, `QComboBox`, `QSpinBox`, `QSlider`, `QProgressBar`
-
-![](images/widgets.png)
 
 ```sh
 python -m src.widgets
 ```
+
+https://github.com/tamaohome/practice-pyside/blob/main/src/widgets.py
+
+![](images/widgets.png)
 
 ## PySide6 の基本構文
 

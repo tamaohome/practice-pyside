@@ -52,6 +52,16 @@ https://github.com/tamaohome/practice-pyside/blob/main/src/widgets.py
 
 ![](images/widgets.png)
 
+### 電卓
+
+```sh
+python -m src.calculator
+```
+
+https://github.com/tamaohome/practice-pyside/blob/main/src/calculator
+
+![](images/calculator.png)
+
 ## PySide6 の基本構文
 
 ### 1. アプリケーションの作成
